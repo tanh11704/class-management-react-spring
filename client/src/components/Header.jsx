@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import {FaBars} from "react-icons/fa6";
-import {FaSearch} from "react-icons/fa";
+import {FaAngleDown, FaSearch} from "react-icons/fa";
 import {Menu, MenuButton, MenuItem, MenuItems} from "@headlessui/react";
 import {IoIosNotificationsOutline} from "react-icons/io";
 import {MdNotificationsNone} from "react-icons/md";
@@ -147,7 +147,7 @@ const Header = (props) => {
                         <img src="./images/header-icon-04.svg" alt="header-icon-04" className="align-middle"/>
                     </button>
                 </li>
-                <li>
+                <li className="relative">
                     <Menu>
                         <MenuButton className="text-[#a0a0a0] text-[14px] leading-[58px] py-0 px-[15px] h-[60px] flex items-center whitespace-nowrap">
                             <div className="mr-[3px] relative inline-flex items-center h-[60px]">
@@ -156,6 +156,9 @@ const Header = (props) => {
                                     <span className="text-[14px] text-[#1d1d1d] mb-[3px]">Ryan Taylor</span>
                                     {/*<p className="leading-[1.2] text-[12px] text-[#3D5EE1] mb-0">Administrator</p>*/}
                                 </div>
+                            </div>
+                            <div className="h-[8px] w-[8px] text-[#7E84A3] -translate-y-1">
+                                <FaAngleDown/>
                             </div>
                         </MenuButton>
                         <MenuItems anchor="bottom" className="ml-[-15px] m-0 p-0 min-w-[200px] text-[14px] border border-solid border-[#0000001a] rounded-[3px] shadow-inherit bg-white z-10">
