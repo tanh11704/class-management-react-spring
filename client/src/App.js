@@ -1,10 +1,11 @@
 import "./App.css";
 import {Route, Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar/Sidebar";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
+import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
 
 function App() {
     return (
@@ -14,7 +15,9 @@ function App() {
                 <Route path="/teachers" element={<>Teacher</>}/>
             </Route>
             <Route path="auth" element={<AuthLayout/>}>
-                {/*<Route/>*/}
+                <Route path="login" element={<Login/>}/>
+                <Route path="register" element={<Register/>}/>
+                <Route path="forgot-password" element={<ForgotPassword/>}/>
             </Route>
         </Routes>
     );

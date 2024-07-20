@@ -1,20 +1,26 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import {
+    FaEnvelope,
+    FaFacebookF,
+    FaGooglePlusG,
+    FaLinkedinIn,
+    FaRegEye,
+    FaRegEyeSlash,
+    FaTwitter
+} from "react-icons/fa6";
 import {FaUserCircle} from "react-icons/fa";
-import {FaCheck, FaFacebookF, FaGooglePlusG, FaLinkedinIn, FaRegEye, FaRegEyeSlash, FaTwitter} from "react-icons/fa6";
+import {Link} from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [rememberMe, setRememberMe] = useState(false);
+    const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
     return (
         <div className="max-w-full grow-0 shrink-0 basis-full">
-            <h1 className="text-[25px] font-bold mb-[5px] text-left">Welcome to Preskool</h1>
+            <h1 className="text-[25px] font-bold mb-[5px] text-left">Sign Up</h1>
             <p className="text-[#AAAAAA] text-[16px] mb-7 text-left">
-                Need an account?
-                <Link to="/auth/register" className="text-[#18AEFA]"> Sign Up </Link>
+                Enter details to create your account
             </p>
-            <h2 className="text-[23px] font-medium text-black mb-7">Sign in</h2>
             <form action="">
                 <div className="relative mb-5">
                     <label htmlFor=""
@@ -32,37 +38,54 @@ const Login = () => {
                 <div className="relative mb-5">
                     <label htmlFor=""
                            className="text-[13px] text-[#ABABAB] font-bold absolute top-[-10px] left-[10px] bg-white mb-0 py-0 px-[5px]">
+                        Email
+                        <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                        className="border rounded text-black text-[15px] h-[45px] w-full py-1.5 px-3 leading-1.5 font-normal bg-white"
+                        type="text"/>
+                    <span className="absolute right-[17px] top-1/2 -translate-y-1/2">
+                        <FaEnvelope/>
+                    </span>
+                </div>
+                <div className="relative mb-5">
+                    <label htmlFor=""
+                           className="text-[13px] text-[#ABABAB] font-bold absolute top-[-10px] left-[10px] bg-white mb-0 py-0 px-[5px]">
                         Password
                         <span className="text-red-500">*</span>
                     </label>
                     <input
                         className="border rounded text-black text-[15px] h-[45px] w-full py-1.5 px-3 leading-1.5 font-normal bg-white"
-                        type={passwordVisible === false ? "password": "text"}/>
+                        type={passwordVisible === false ? "password" : "text"}/>
                     <span className="absolute right-[17px] top-1/2 -translate-y-1/2">
-                        {passwordVisible === false ? <FaRegEye onClick={() => setPasswordVisible(!passwordVisible)}/> : <FaRegEyeSlash onClick={() => setPasswordVisible(!passwordVisible)}/>}
+                        {passwordVisible === false ? <FaRegEye onClick={() => setPasswordVisible(!passwordVisible)}/> :
+                            <FaRegEyeSlash onClick={() => setPasswordVisible(!passwordVisible)}/>}
                     </span>
                 </div>
-                <div className="flex mb-5">
-                    <div>
-                        <label className="text-[#878787] font-normal relative pl-7 cursor-pointer">
-                            Remember me
-                            <input type="checkbox" name="radio" className="absolute opacity-0 cursor-pointer"/>
-                            <span
-                                onClick={() => setRememberMe(!rememberMe)}
-                                className={
-                                `size-5 absolute left-0 top-0 border border-solid rounded 
-                                ${rememberMe === false ? "border-[#C1CCDB] bg-white": "border-[#3d5ee1] bg-[#3d5ee1]"}`
-                            }>
-                                <FaCheck className="block absolute left-[5px] top-[4px] text-white text-[9px]"/>
-                            </span>
-                        </label>
-                    </div>
-                    <Link to="/auth/forgot-password" className="text-[#18AEFA] text-[15px] ml-auto">
-                        Forgot Password?
-                    </Link>
+                <div className="relative mb-5">
+                    <label htmlFor=""
+                           className="text-[13px] text-[#ABABAB] font-bold absolute top-[-10px] left-[10px] bg-white mb-0 py-0 px-[5px]">
+                        Password
+                        <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                        className="border rounded text-black text-[15px] h-[45px] w-full py-1.5 px-3 leading-1.5 font-normal bg-white"
+                        type={confirmPasswordVisible === false ? "password" : "text"}/>
+                    <span className="absolute right-[17px] top-1/2 -translate-y-1/2">
+                        {confirmPasswordVisible === false ?
+                            <FaRegEye onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}/> :
+                            <FaRegEyeSlash onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}/>}
+                    </span>
+                </div>
+                <div className="text-[#a0a0a0] my-5">
+                    Already Registered?
+                    <Link to="/auth/login" className="text-[#18AEFA]"> Login</Link>
                 </div>
                 <div className="relative mb-5">
-                    <button className="w-full bg-[#3d5ee1] border-solid py-1.5 text-white rounded-[6px] hover:bg-[#18aefa] transition-all duration-400">Login</button>
+                    <button
+                        className="w-full bg-[#3d5ee1] border-solid py-1.5 text-white rounded-[6px] hover:bg-[#18aefa] transition-all duration-400">
+                        Register
+                    </button>
                 </div>
             </form>
             <div className="text-[#a0a0a0] my-5 py-3 relative">
@@ -92,4 +115,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

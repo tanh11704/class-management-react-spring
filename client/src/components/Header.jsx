@@ -180,7 +180,7 @@ const Header = (props) => {
                                 <NavLink to="/" className="flex items-center py-[10px] px-[15px] border-t border-solid border-[#e3e3e3] hover:text-[#3d5ee1] hover:bg-[#f9f9f9]">Inbox</NavLink>
                             </MenuItem>
                             <MenuItem>
-                                <NavLink to="/" className="flex items-center py-[10px] px-[15px] border-t border-solid border-[#e3e3e3] hover:text-[#3d5ee1] hover:bg-[#f9f9f9]">Logout</NavLink>
+                                <NavLink to="/auth/login" className="flex items-center py-[10px] px-[15px] border-t border-solid border-[#e3e3e3] hover:text-[#3d5ee1] hover:bg-[#f9f9f9]">Logout</NavLink>
                             </MenuItem>
                         </MenuItems>
                     </Menu>
