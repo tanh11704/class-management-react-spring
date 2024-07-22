@@ -24,12 +24,13 @@ const Sidebar = (props) => {
                             </li>
                             <li className="mb-[3px] relative">
                                 <NavLink to="/"
-                                         className="items-center flex justify-start py-[12px] px-[15px] relative text-[#6f6f6f] text-[16px] h-auto hover:bg-white hover:text-[#3D5EE1] hover:mx-[-15px] hover:pl-[30px] transition-all ease-in-out duration-200">
+                                         className="items-center flex justify-start py-[12px] px-[15px] relative text-[16px] h-auto text-[#3D5EE1] mx-[-15px] pl-[30px] transition-all ease-in-out duration-200">
+                                    <div className="w-[6px] h-full absolute left-0 top-0 bg-[#3D5EE1] rounded-tr rounded-br"></div>
                                     <FiGrid
                                         className="inline-block text-[16px] leading-[24px] text-left align-middle w-[20px]"/>
                                     <span className="inline-block ml-[10px] whitespace-nowrap">Dashboard</span>
                                     <span
-                                        className="inline-block ml-[10px] whitespace-nowrap absolute right-[15px] top-[14px] leading-[18px] text-[16px]">
+                                        className="inline-block whitespace-nowrap absolute right-[15px] top-[14px] leading-[18px] text-[16px]">
                                             <FaChevronRight/>
                                         </span>
                                 </NavLink>
